@@ -1,0 +1,16 @@
+{
+	"name": "hrtime",
+	"description": "high resolution time functions for node.js",
+	"version": "1.0.0",
+	"keywords": ["time", "high-resolution", "nanos", "clock"],
+	"maintainers": [{
+		"name": "Matthew 'rektide' Fowle",
+		"email": "rektide@voodoowarez.com",
+		"web": "http://voodoowarez.com"
+	}],
+	"implements": ["CommonJS/Modules/1.0"],
+	"engines": { "node": ">=0.4.0" },
+	"dependencies": {
+	},
+	"repository": {"type": "git", "url": "http://git.voodoowarez.com/hrtime.git"}
+}
