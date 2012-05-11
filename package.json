@@ -1,0 +1,12 @@
+{
+	"name": "hrtime",
+	"description": "high resolution time",
+	"version": "0.5.1",
+	"main": "hrtime.node",
+	"keywords": ["high-resolution time"],
+	"homepage": "http://socialtables.com",
+	"implements": ["CommonJS/Modules/1.0"],
+	"engines": { "node": ">=0.6.0" },
+	"dependencies": {},
+	"repository": {"type": "git", "url": "https://github.com/socialtables/hrtime.git"}
+}
