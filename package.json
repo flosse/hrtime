@@ -2,7 +2,7 @@
   "name": "hrtime",
   "description": "high resolution time functions for node.js",
   "homepage": "https://github.com/runelabs/hrtime",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "hrtime.node",
   "keywords": ["time", "high-resolution", "nanos", "clock"],
   "maintainers": [{

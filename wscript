@@ -25,5 +25,5 @@ def shutdown(bld):
   if Options.commands['clean']:
     if exists('hrtime.node'): unlink('hrtime.node')
   else:
-    if exists('build/default/hrtime.node') and not exists('hrtime.node'):
-      symlink(getcwd()+'/build/default/hrtime.node', 'hrtime.node')
+    if exists('build/Release/hrtime.node') and not exists('hrtime.node'):
+      symlink(getcwd()+'/build/Release/hrtime.node', 'hrtime.node')
