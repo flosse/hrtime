@@ -1,16 +1,26 @@
 {
-	"name": "hrtime",
-	"description": "high resolution time functions for node.js",
-	"version": "1.0.0",
-	"keywords": ["time", "high-resolution", "nanos", "clock"],
-	"maintainers": [{
-		"name": "Matthew 'rektide' Fowle",
-		"email": "rektide@voodoowarez.com",
-		"web": "http://voodoowarez.com"
-	}],
-	"implements": ["CommonJS/Modules/1.0"],
-	"engines": { "node": ">=0.4.0" },
-	"dependencies": {
-	},
-	"repository": {"type": "git", "url": "http://git.voodoowarez.com/hrtime.git"}
+  "name": "hrtime",
+  "description": "high resolution time functions for node.js",
+  "homepage": "https://github.com/runelabs/hrtime",
+  "version": "1.0.0",
+  "main": "hrtime.node",
+  "keywords": ["time", "high-resolution", "nanos", "clock"],
+  "maintainers": [{
+    "name": "Rune Karlsen",
+    "email": "runelabs@gmail.com"
+  },
+  {
+    "name": "Markus Kohlhase",
+    "email": "mail@markus-kohlhase.de"
+  },
+  {
+    "name": "Matthew 'rektide' Fowle",
+    "email": "rektide@voodoowarez.com",
+    "web": "http://voodoowarez.com"
+  }],
+  "implements": ["CommonJS/Modules/1.0"],
+  "engines": { "node": ">=0.8.2" },
+  "dependencies": {
+  },
+  "repository": {"type": "git", "url": "https://github.com/runelabs/hrtime.git"}
 }
