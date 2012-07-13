@@ -76,6 +76,9 @@ void Initialize(Handle<Object> target) {
   Local<FunctionTemplate> t6 = FunctionTemplate::New(Resolution);
   target->Set(String::NewSymbol("resolution"), t6->GetFunction() );
 
+  Local<FunctionTemplate> t7 = FunctionTemplate::New(Sleep);
+  target->Set(String::NewSymbol("sleep"), t7->GetFunction() );
+
 }
 
 /*
@@ -239,6 +242,43 @@ Handle<Value> Resolution(const Arguments &args) {
 
   sprintf(ns, "%lu", new_res.tv_nsec);
   return scope.Close(Encode(ns, strlen(ns), encode));
+
+}
+
+#define NANOSECONDS_PER_SECOND  1000000000
+#include <errno.h>
+
+/*
+ * NAME: sleep()
+ * RETURNS: undefined
+ * ERRORS: Throws exception
+ * PARAMETERS: nanoseconds
+ */
+Handle<Value> Sleep(const Arguments &args) {
+
+  HandleScope scope;
+  unsigned int duration_ns  = 0;
+  unsigned int duration_sec = 0;
+
+  struct timespec sleeptime;
+
+  if (args.Length() < 1 || !args[0]->IsNumber() ) {
+    return ThrowException(Exception::TypeError(
+      String::New("First argument must be a number")));
+  }
+
+  duration_ns = args[0]->ToInteger()->Value();
+
+  if (duration_ns >= NANOSECONDS_PER_SECOND) {
+    duration_sec = (long) duration_ns/NANOSECONDS_PER_SECOND;
+    duration_ns = duration_ns - (duration_sec * NANOSECONDS_PER_SECOND);
+  }
+
+  clock_gettime( CLOCK_MONOTONIC, &sleeptime );
+  sleeptime.tv_sec  += duration_sec;
+  sleeptime.tv_nsec += duration_ns;
+  while (clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME, &sleeptime,NULL)==EINTR)
+  return scope.Close(Undefined());
 
 }
 

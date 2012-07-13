@@ -45,6 +45,7 @@ v8::Handle<v8::Value> Cputime(const v8::Arguments &args);
 v8::Handle<v8::Value> Initime(const v8::Arguments &args);
 v8::Handle<v8::Value> Runtime(const v8::Arguments &args);
 v8::Handle<v8::Value> Resolution(const v8::Arguments &args);
+v8::Handle<v8::Value> Sleep(const v8::Arguments &args);
 
 
 }
